@@ -1,4 +1,4 @@
-window.onscroll = function () {
+onscroll = function () {
   stickyMenu();
 };
 
@@ -13,7 +13,6 @@ function stickyMenu() {
   }
 }
 
-// کد مربوط به گالری عکس
 const photos = [
   { src: "images/fine-meat-kebabs.jpg", title: "Fine Meat Kebabs" },
   { src: "images/ground-beef-ourshop.jpg", title: "The Best Ground Beef" },
@@ -47,5 +46,5 @@ function toggleMenu() {
   const menuList = document.getElementById("menuList");
   const hamburger = document.getElementById("hamburger");
   menuList.classList.toggle("show");
-  hamburger.classList.toggle("active"); // افزودن کلاس فعال برای تبدیل به ضربدر
+  hamburger.classList.toggle("active");
 }
