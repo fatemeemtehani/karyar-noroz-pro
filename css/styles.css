@@ -142,6 +142,49 @@
   transition: color 0.5s ease;
   cursor: pointer;
 }
+/* ............... */
+#toggle {
+  display: none;
+}
+
+#label-toggle {
+  top: 10px;
+  left: -10px;
+  user-select: none;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 20px;
+}
+
+#label-toggle .line {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  display: block;
+  transition: all 1.5s ease;
+  position: relative;
+  margin-left: 370px;
+}
+
+#toggle:checked ~ .menu #label-toggle .line1 {
+  top: 14px;
+  transform: rotate(-720deg) scaleX(0);
+}
+#toggle:checked ~ .menu #label-toggle .line2 {
+  transform: rotate(-765deg);
+  height: 6px;
+}
+#toggle:checked ~ .menu #label-toggle .line3 {
+  top: -14px;
+  height: 6px;
+  transform: rotate(-855deg);
+}
+
+#toggle:checked ~ .menu ul {
+  display: flex;
+}
 .section_main {
   position: relative;
   width: 100%;
@@ -1837,14 +1880,35 @@ textarea:hover {
     transition: color 0.5s ease;
   }
 
-  .hamburger {
-    display: block; /* نمایش در حالت موبایل */
-    color: #cacac7;
-    margin-left: 87%;
-    font-size: 32px;
-    font-weight: bold;
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
 
+  #label-toggle {
+    display: flex;
+    position: relative;
+    z-index: 2001;
+  }
+
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+
+  .menu ul a {
+    color: #1d1815;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    background-color: white;
+  }
   #menuList {
     display: none;
     flex-direction: column;
